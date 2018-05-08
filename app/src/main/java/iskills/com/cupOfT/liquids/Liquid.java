@@ -13,7 +13,7 @@ public abstract class Liquid extends CupState {
     public abstract Integer color();
 
     //TODO Step 9 this should no longer be used
-    public String getName() {
+    protected String getName() {
         return getClass().getSimpleName();
     }
 }

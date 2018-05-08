@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * 5/7/18
  */
 public class Cup<T> {
-    private ArrayList<T> ingredients = new ArrayList<T>();
+    private ArrayList<T> ingredients = new ArrayList<>();
 
     public void fillWith(T liq){
         add(liq);

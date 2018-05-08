@@ -16,8 +16,9 @@ class MainPresenter {
 
   MainPresenter() {}
 
-  void init(MainView mainView) {
+  protected void init(MainView mainView) {
     this.mainView = mainView;
+    this.mainView.renderView(getIngredients());
   }
 
   private void addLiquid(Liquid liquid) {
@@ -28,13 +29,12 @@ class MainPresenter {
     mainView.updateLiquidColor(state.color());
   }
 
-  public ArrayList<String> getIngredients() {
+  private ArrayList<String> getIngredients() {
     return ingredientManager.getIngredientNames();
   }
 
   // TODO Step 8 add support for CupState to account for Empty
   public void selectIngredient(int ingredientPosition) {
-
     // BELOW
     if (ingredientManager.getIngredient(ingredientPosition).getContent() instanceof Empty) {
       cup.empty();
@@ -43,14 +43,23 @@ class MainPresenter {
     if (ingredientManager.getIngredient(ingredientPosition).getContent() instanceof CupState) {
       updateCupState((CupState) ingredientManager.getIngredient(ingredientPosition).getContent());
     } else
+    if (ingredientManager.getIngredient(ingredientPosition).getContent() instanceof Liquid) {
+      addLiquid((Liquid) ingredientManager.getIngredient(ingredientPosition).getContent());
+    } else if (ingredientManager.getIngredient(ingredientPosition).getContent()
+        instanceof Reminder) { //TODO REMOVE Easy way to only catch only from the cup.add method because above catches
+        for(Object box : cup.getIngredients()){
+            mainView.showMessage(box.getClass().getSimpleName());
+        }
 
-    // TODO REMOVE_LATER ABOVE && .getContent for use of Boxes
-
-        if (ingredientManager.getIngredient(ingredientPosition).getContent() instanceof Liquid) {
-          addLiquid((Liquid) ingredientManager.getIngredient(ingredientPosition).getContent());
-        } else
-    {
+      // TODO REMOVE_LATER ABOVE && .getContent for use of Boxes
+    } else {
       cup.add(ingredientManager.getIngredient(ingredientPosition).getContent());
+      mainView.showMessage(
+          ingredientManager
+              .getIngredient(ingredientPosition)
+              .getContent()
+              .getClass()
+              .getSimpleName());
     }
   }
 }

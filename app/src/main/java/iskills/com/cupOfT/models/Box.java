@@ -19,6 +19,13 @@ public class Box<T> {
     }
 
     public T getContent() {
+        if(object == null) {
+            try {
+                throw new IllegalAccessException();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
         return object;
     }
 

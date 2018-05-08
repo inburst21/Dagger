@@ -7,6 +7,9 @@ import iskills.com.cupOfT.R;
  * 5/7/18
  */
 public class Milk extends Liquid {
+    public void milk(){
+
+    }
     @Override
     public Integer color() {
         return R.color.white;

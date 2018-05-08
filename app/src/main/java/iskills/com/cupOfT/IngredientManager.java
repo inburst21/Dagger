@@ -1,6 +1,7 @@
 package iskills.com.cupOfT;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import iskills.com.cupOfT.liquids.Milk;
 import iskills.com.cupOfT.liquids.Tea;
@@ -14,7 +15,7 @@ import iskills.com.cupOfT.models.Empty;
 class IngredientManager{
 
     //TODO Step 6 change to a list of the new Box class
-    private ArrayList<Box> ingredientList = new ArrayList<>();
+    private LinkedList<Box> ingredientList = new LinkedList<>();
 
     //TODO Step 7 Use the addSelection method with the same arguments
     IngredientManager(){
@@ -27,15 +28,19 @@ class IngredientManager{
         //Maybe show two ways
 
         Box<Milk> milkBox = new Box<>(new Milk());
+//        milkBox.getContent().milk();  TODO REMOVE Possible lesson about this way also.
         Box teaBox = new Box<>(new Tea());
         addSelection(milkBox);
         addSelection(teaBox);
+        addSelection(new Box<>(new Reminder()));
         //TODO REMOVE_LATER ABOVE && UNCOMMENT BELOW
-//        ingredientList.add(new Box<>());
+//        ingredientList.add(new Remove());  -  This would be the point a developer would come across trying to extend everything
+//        ingredientList.add(new Milk());
+//        ingredientList.add(new Tea());
     }
 
     //TODO Step 8 - For steps 8-10 update arguments to use Box
-    private ArrayList<Box> getIngredientList() {
+    private LinkedList<Box> getIngredientList() {
         return ingredientList;
     }
 
