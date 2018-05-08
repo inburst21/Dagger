@@ -17,7 +17,7 @@ public class Cup<T> {
         ingredients = new ArrayList<>();
     }
 
-    //TODO Step 2 Change Object to Box
+    //TODO Step 6 Change Object to Box
     public void add(T ingredient) {
         ingredients.add(ingredient);
     }

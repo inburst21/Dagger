@@ -14,10 +14,10 @@ import iskills.com.cupOfT.models.Empty;
  */
 class IngredientManager{
 
-    //TODO Step 6 change to a list of the new Box class
+    //TODO Step 7 change to a list of the new Box class
     private LinkedList<Box> ingredientList = new LinkedList<>();
 
-    //TODO Step 7 Use the addSelection method with the same arguments
+    //TODO Step 8 Use the addSelection method with the same arguments
     IngredientManager(){
         //BELOW
 
@@ -39,12 +39,12 @@ class IngredientManager{
 //        ingredientList.add(new Tea());
     }
 
-    //TODO Step 8 - For steps 8-10 update arguments to use Box
+    //TODO Step 9 - For steps 9-12 update arguments to use Box
     private LinkedList<Box> getIngredientList() {
         return ingredientList;
     }
 
-    //TODO Step 8
+    //TODO Step 10
     public ArrayList<String> getIngredientNames() {
             ArrayList<String> ingredientNames = new ArrayList<>();
             for (Box ingredient : getIngredientList()) {
@@ -54,12 +54,12 @@ class IngredientManager{
 
     }
 
-    //TODO Step 10
+    //TODO Step 11
     public Box getIngredient(int position){
         return ingredientList.get(position);
     }
 
-    //TODO Step 11 - Uncomment
+    //TODO Step 12
     private void addSelection(Box ingredient){
         ingredientList.add(ingredient);
     }

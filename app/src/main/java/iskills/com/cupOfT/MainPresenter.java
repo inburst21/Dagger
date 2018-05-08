@@ -33,7 +33,7 @@ class MainPresenter {
     return ingredientManager.getIngredientNames();
   }
 
-  // TODO Step 8 add support for CupState to account for Empty
+  // TODO Step 13 add support for CupState to account for Empty
   public void selectIngredient(int ingredientPosition) {
     // BELOW
     if (ingredientManager.getIngredient(ingredientPosition).getContent() instanceof Empty) {
@@ -42,16 +42,17 @@ class MainPresenter {
 
     if (ingredientManager.getIngredient(ingredientPosition).getContent() instanceof CupState) {
       updateCupState((CupState) ingredientManager.getIngredient(ingredientPosition).getContent());
-    } else
-    if (ingredientManager.getIngredient(ingredientPosition).getContent() instanceof Liquid) {
-      addLiquid((Liquid) ingredientManager.getIngredient(ingredientPosition).getContent());
     } else if (ingredientManager.getIngredient(ingredientPosition).getContent()
-        instanceof Reminder) { //TODO REMOVE Easy way to only catch only from the cup.add method because above catches
-        for(Object box : cup.getIngredients()){
-            mainView.showMessage(box.getClass().getSimpleName());
-        }
+        instanceof
+        Reminder) { // TODO REMOVE Easy way to only catch only from the cup.add method because above
+                    // catches
+      for (Object box : cup.getIngredients()) {
+        mainView.showMessage(box.getClass().getSimpleName());
+      }
 
       // TODO REMOVE_LATER ABOVE && .getContent for use of Boxes
+    } else if (ingredientManager.getIngredient(ingredientPosition).getContent() instanceof Liquid) {
+      addLiquid((Liquid) ingredientManager.getIngredient(ingredientPosition).getContent());
     } else {
       cup.add(ingredientManager.getIngredient(ingredientPosition).getContent());
       mainView.showMessage(
