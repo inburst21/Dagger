@@ -1,7 +1,6 @@
 package iskills.com.cupOfT;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatSpinner;
 import android.view.View;
@@ -11,10 +10,15 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dagger.android.support.DaggerAppCompatActivity;
 
-public class MainActivity extends AppCompatActivity
+
+//TODO Step ?? Extend DaggerActivity
+public class MainActivity extends DaggerAppCompatActivity
     implements MainView, AdapterView.OnItemSelectedListener {
 
   @BindView(R.id.image_cup)
@@ -23,7 +27,9 @@ public class MainActivity extends AppCompatActivity
   @BindView(R.id.spinner)
   AppCompatSpinner ingredientSpinner;
 
-  private final MainPresenter mainPresenter = new MainPresenter();
+  //TODO Step ?? Inject
+  @Inject
+  protected MainPresenter mainPresenter;
   private ArrayAdapter<String> adapter;
 
   @Override
@@ -31,7 +37,7 @@ public class MainActivity extends AppCompatActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
-    cupView.setImageResource(R.drawable.ic_cup_svg_icon); //TODO REMOVE_QUESTION Could show use of a cup manager that gets out a cup by temperature
+    cupView.setImageResource(R.drawable.ic_cup_svg_icon);
     mainPresenter.init(this);
   }
 

@@ -7,7 +7,7 @@ import java.util.List;
  * 5/7/18
  */
 interface MainView {
-    void renderView(List<String> ingredients); // Or easily show list
+    void renderView(List<String> ingredients);
     void updateLiquidColor(Integer color);
 
     void showMessage(String content);
