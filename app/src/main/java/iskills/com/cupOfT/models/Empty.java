@@ -6,6 +6,6 @@ import iskills.com.cupOfT.R;
 public class Empty extends CupState {
   @Override
   public Integer color() {
-    return R.color.black;
+    return R.color.white;
   }
 }

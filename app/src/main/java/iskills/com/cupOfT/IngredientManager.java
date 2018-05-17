@@ -3,7 +3,7 @@ package iskills.com.cupOfT;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import iskills.com.cupOfT.liquids.Milk;
+import iskills.com.cupOfT.liquids.Coffee;
 import iskills.com.cupOfT.liquids.Tea;
 import iskills.com.cupOfT.models.Box;
 import iskills.com.cupOfT.models.Empty;
@@ -17,9 +17,8 @@ public class IngredientManager{
     private LinkedList<Box> ingredientList = new LinkedList<>();
 
     public IngredientManager(){
-        //TODO Optional ??  Maybe make an api service
         addSelection(new Box<>(new Empty()));
-        addSelection(new Box<>(new Milk()));
+        addSelection(new Box<>(new Coffee()));
         addSelection(new Box<>(new Tea()));
     }
 

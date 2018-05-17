@@ -4,17 +4,14 @@ import dagger.Module;
 import dagger.Provides;
 import iskills.com.cupOfT.IngredientManager;
 
-/**
- * lennyhicks
- * 5/8/18
- */
-//TODO Step ?? Make a provides method for our IngredientManager
-    @Module
+/** lennyhicks 5/8/18 */
+// TODO Step ?? Make a provides method for our IngredientManager this will provide our manager when requested
+@Module
 public class ManagerModule {
-    //TODO REMOVE BELOW
-    @Provides
-    IngredientManager ingredientManager(){
-        return new IngredientManager();
-    }
-    //TODO REMOVE ABOVE
+  // TODO REMOVE BELOW
+  @Provides
+  IngredientManager ingredientManager() {
+    return new IngredientManager();
+  }
+  // TODO REMOVE ABOVE
 }

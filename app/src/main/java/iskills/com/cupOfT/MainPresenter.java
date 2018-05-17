@@ -16,7 +16,7 @@ class MainPresenter {
   private Cup cup = new Cup();
   private final IngredientManager ingredientManager;
 
-  // TODO Step ?? Inject the ingredient manager
+  // TODO Step ?? Inject the ingredient manager constructor injection preferred
   @Inject
   MainPresenter(final IngredientManager ingredientManager) {
     this.ingredientManager = ingredientManager;

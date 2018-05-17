@@ -10,7 +10,7 @@ import dagger.android.support.DaggerApplication;
 import iskills.com.cupOfT.di.DaggerApplicationComponent;
 
 /** lennyhicks 5/8/18 */
-//TODO Step ?? MakeYourApplication
+//TODO Step ?? MakeYourApplication this is a simple application setup
 public class CupOfTeaApplication extends DaggerApplication {
 
   @Inject DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;

@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 import dagger.android.support.DaggerAppCompatActivity;
 
 
-//TODO Step ?? Extend DaggerActivity
+//TODO Step ?? Extend DaggerActivity will just designate will be injected in onCreate
 public class MainActivity extends DaggerAppCompatActivity
     implements MainView, AdapterView.OnItemSelectedListener {
 
@@ -27,7 +27,7 @@ public class MainActivity extends DaggerAppCompatActivity
   @BindView(R.id.spinner)
   AppCompatSpinner ingredientSpinner;
 
-  //TODO Step ?? Inject
+  //TODO Step ?? Inject will inject this in onCreate
   @Inject
   protected MainPresenter mainPresenter;
   private ArrayAdapter<String> adapter;
@@ -37,7 +37,7 @@ public class MainActivity extends DaggerAppCompatActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
-    cupView.setImageResource(R.drawable.ic_cup_svg_icon);
+    cupView.setImageResource(R.drawable.ic_cup);
     mainPresenter.init(this);
   }
 
