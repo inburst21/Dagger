@@ -24,9 +24,9 @@ import iskills.com.cupOfT.CupOfTeaApplication;
 //TODO Step ?? Set up ApplicationComponent Simple application setup Application can be provided with this but is not needed.
 public interface ApplicationComponent extends AndroidInjector<CupOfTeaApplication> {
 
-    @Component.Builder
+    @Component.Builder // This will be our method we build our CupOfTeaApplication with
     interface Builder {
-        @BindsInstance
+        @BindsInstance // This can bind and provide Application use can be seen in CupOfTeaApplication.class
         ApplicationComponent.Builder application(Application application);
         ApplicationComponent build();
     }
